@@ -2,7 +2,7 @@ import {UncontrolledOnOff} from "./UncontrolledOnOff";
 
 
 export default {
-    title: 'Uncontrolled OnOff stories',
+    title: 'Components/Uncontrolled OnOff stories',
     component: UncontrolledOnOff,
 }
 

@@ -2,7 +2,7 @@ import {UncontrolledAccordion} from "./UncontrolledAccordion";
 
 
 export default {
-    title: 'Uncontrolled Accordion stories',
+    title: 'Components/Uncontrolled Accordion stories',
     component: UncontrolledAccordion,
 }
 
