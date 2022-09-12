@@ -6,7 +6,8 @@ type OnOffType = {
     callBack: (value: boolean) => void
 }
 
-export const OnOff = (props: OnOffType) => {
+export const OnOff = React.memo ((props: OnOffType) => {
+    console.log('OnOff is rendering')
 
     const onStyle = {
         width: "60px",
@@ -41,5 +42,5 @@ export const OnOff = (props: OnOffType) => {
             </div>
         );
 
-};
+});
 

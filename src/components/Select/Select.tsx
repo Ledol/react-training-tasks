@@ -1,4 +1,4 @@
-import {KeyboardEvent, useEffect, useState} from "react";
+import React, {KeyboardEvent, useEffect, useState} from "react";
 import style from './Select.module.css'
 
 export type ItemType = {
@@ -12,7 +12,8 @@ type SelectPropsType = {
     onClick: (value: any) => void
 }
 
-export const Select = (props: SelectPropsType) => {
+export const Select = React.memo((props: SelectPropsType) => {
+    console.log('Select rendering')
     const [active, setActive] = useState(false)
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
 
@@ -36,7 +37,7 @@ export const Select = (props: SelectPropsType) => {
             for (let i = 0; i < props.items.length; i++) {
                 if (props.items[i].value === hoveredElementValue) {
                     const pretendentElement = e.key === "ArrowDown"
-                    ? props.items[i + 1]
+                        ? props.items[i + 1]
                         : props.items[i - 1]
 
                     if (pretendentElement) {
@@ -45,12 +46,10 @@ export const Select = (props: SelectPropsType) => {
                     }
                 }
             }
-            if(!selectedItem){
+            if (!selectedItem) {
                 props.onClick(props.items[0].value);
             }
-
         }
-
         if (e.key === "Enter" || e.key === "Escape") {
             setActive(false)
         }
@@ -80,4 +79,4 @@ export const Select = (props: SelectPropsType) => {
             </div>
         </>
     )
-}
+})

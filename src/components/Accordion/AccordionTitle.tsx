@@ -5,9 +5,9 @@ type AccordionTitleType = {
     title: string
 }
 
-export const AccordionTitle = (props: AccordionTitleType) => {
+export const AccordionTitle = React.memo((props: AccordionTitleType) => {
     console.log('AccordionTitle rendering')
     return (
-        <h3 onClick={(e)=>props.callBack()}>--- {props.title} ---</h3>
+        <h3 onClick={()=>props.callBack()}>--- {props.title} ---</h3>
     );
-};
+});

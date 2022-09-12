@@ -6,16 +6,18 @@ type AccordionBodyType = {
     onClick: (value: any) => void
 }
 
-export const AccordionBody = (props: AccordionBodyType) => {
+export const AccordionBody = React.memo((props: AccordionBodyType) => {
     console.log('AccordionBody rendering')
+
+    const resultOfBody = props.items.map((i, index) => {
+        return <li key={index}
+                   onClick={()=>props.onClick(i.value)}>{i.title}</li>
+    })
 
     return (
         <ul>
-            {props.items.map((i, index) => {
-                return <li key={index}
-                           onClick={()=>props.onClick(i.value)}>{i.title}</li>
-            })}
+            {resultOfBody}
         </ul>
 
     );
-};
+});
