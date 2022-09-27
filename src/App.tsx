@@ -1,11 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Rating, RatingValueType} from "./components/Rating/Rating";
-import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
-import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import {RatingValueType} from "./components/Rating/Rating";
 import {Accordion} from "./components/Accordion/Accordion";
-import {Select} from "./components/Select/Select";
-import {OnOff} from "./components/OnOff/OnOff";
 
 function App() {
     console.log('App rendering')
@@ -34,16 +30,17 @@ function App() {
 
     return (
         <div className="App">
-            <UncontrolledAccordion titleValue={'Menu'}/>
+            {/*<UncontrolledAccordion titleValue={'Menu'}/>
             <OnOff status={on} callBack={setOn}/>
             <UncontrolledRating/>
-            <Rating value={ratingValue} callBack={setRatingValue}/>
+            <Rating value={ratingValue} callBack={setRatingValue}/>*/}
             <Accordion titleValue={"Menu"}
                        collapsed={collapsed}
                        callBack={() => setCollapsed(!collapsed)}
                        items={items}
                        onClick={accordionOnClickItem}/>
-            <Select value={parentValue} items={itemsForSelect} onClick={setParentValue}/>
+
+            {/*<Select value={parentValue} items={itemsForSelect} onClick={setParentValue}/>*/}
 
         </div>
     );
