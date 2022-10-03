@@ -30,7 +30,6 @@ export const AnalogClock = () => {
 
     return (
         <div  className={style.clock}>
-            <h3>Analog Clock</h3>
             <div className={style.analogClock}>
                 <div className={style.dialSeconds} style={secondsStyle} />
                 <div className={style.dialMinutes} style={minutesStyle}/>

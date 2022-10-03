@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-const secondNumberTime = (timeNumber: number) => timeNumber < 10 ? "1" + timeNumber : timeNumber
+const secondNumberTime = (timeNumber: number) => timeNumber < 10 ? "0" + timeNumber : timeNumber
 
 export const Clock = () => {
 
@@ -12,9 +12,7 @@ export const Clock = () => {
 
     useEffect(() => {
 
-
         const intervalID =  setInterval(() => {
-            console.log('tic')
             setDate(new Date())
         }, 1000);
 
